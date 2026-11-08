@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-08T06:12:22+00:00",
+  "where": "project",
+  "out": "C:\\Users\\Luis Puc\\Documents\\LPS Projects\\testing\\testing",
+  "targets": [
+    "claude",
+    "copilot",
+    "opencode",
+    "antigravity"
+  ],
+  "agents": [
+    "code-reviewer",
+    "git-branch-inspector",
+    "graph-init",
+    "test-writer"
+  ],
+  "skills": [
+    "project-foundations",
+    "spec-drive-development"
+  ],
+  "files": [
+    {
+      "path": ".agents/mcp_config.json",
+      "sha256": "803d2a668d3a851fef5052fb597ad3df7a799825204f781477e46b5800439ca1",
+      "target": "antigravity",
+      "kind": "mcp"
+    },
+    {
+      "path": ".claude/agents/code-reviewer.md",
+      "sha256": "44df0208118b7f93d84881ef5491fb5cdee718d577374371606e72c63a94659a",
+      "target": "claude",
+      "kind": "agent"
+    },
+    {
+      "path": ".claude/agents/git-branch-inspector.md",
+      "sha256": "97ebd682201c0a5ab48dc4ef18739fec9dcb1e2fa0cb74c1ce11ec2881b1da0c",
+      "target": "claude",
+      "kind": "agent"
+    },
+    {
+      "path": ".claude/agents/graph-init.md",
+      "sha256": "1a26cbc12861f47279fac4f58d6575bb66776828dbedc8bb5f3a85bdc60ae128",
+      "target": "claude",
+      "kind": "agent"
+    },
+    {
+      "path": ".claude/agents/test-writer.md",
+      "sha256": "58eb8839e189ecdd99858b174545fde0fb855c49c4dbd1961ea2bd44434e9d34",
+      "target": "claude",
+      "kind": "agent"
+    },
+    {
+      "path": ".claude/scripts/git-branch-report.sh",
+      "sha256": "ce7053a8cbe47a45b6dcbb5238655140c97b3a9edfc6cbea4b854de0b4bbab31",
+      "target": "claude",
+      "kind": "script"
+    },
+    {
+      "path": ".claude/scripts/graph-init.sh",
+      "sha256": "0300f0bb95acc3d06f2b6ffb229bafa2e1fe0d415b9ae21f49b31f3dc1387005",
+      "target": "claude",
+      "kind": "script"
+    },
+    {
+      "path": ".claude/skills/project-foundations/SKILL.md",
+      "sha256": "e95cee8db204826fe2cd2efa35dfbfa74401ae6d901e5657eb0a4f7bb5b945e9",
+      "target": "claude",
+      "kind": "skill"
+    },
+    {
+      "path": ".claude/skills/spec-drive-development/SKILL.md",
+      "sha256": "aa97137f1fffedf1c6cd1eb320bb4d94cc3d421dfa47a6c0de338002e144c18d",
+      "target": "claude",
+      "kind": "skill"
+    },
+    {
+      "path": ".claude/skills/spec-drive-development/references/templates.md",
+      "sha256": "3619ac3795e559cfa86488b0a218830d6970b01b8038fdad88f47c22d3c6ed22",
+      "target": "claude",
+      "kind": "skill"
+    },
+    {
+      "path": ".github/agents/code-reviewer.agent.md",
+      "sha256": "0f21bf5aa8d8db3bd9de7ebb1260776a7682e4a61c666d2d074bcd51f2160e45",
+      "target": "copilot",
+      "kind": "agent"
+    },
+    {
+      "path": ".github/agents/git-branch-inspector.agent.md",
+      "sha256": "724bcd6367f5a2fd755dab4c0431d985634244290d2042e08d26976b0d0b553e",
+      "target": "copilot",
+      "kind": "agent"
+    },
+    {
+      "path": ".github/agents/graph-init.agent.md",
+      "sha256": "0ee5fff6902a8c7f371d7776f98e920f8363ee66b7d85e06a2702d774f769fbe",
+      "target": "copilot",
+      "kind": "agent"
+    },
+    {
+      "path": ".github/agents/test-writer.agent.md",
+      "sha256": "84dfb53984e52bb57f4f5e943be271a2a10c4cf0dd9379f0305b3275e089b6b6",
+      "target": "copilot",
+      "kind": "agent"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "sha256": "8055f9785f456623e933993fbb82b914b2766f26386ad9074ada57644fce874e",
+      "target": "copilot",
+      "kind": "instructions"
+    },
+    {
+      "path": ".github/scripts/git-branch-report.sh",
+      "sha256": "ce7053a8cbe47a45b6dcbb5238655140c97b3a9edfc6cbea4b854de0b4bbab31",
+      "target": "copilot",
+      "kind": "script"
+    },
+    {
+      "path": ".github/scripts/graph-init.sh",
+      "sha256": "0300f0bb95acc3d06f2b6ffb229bafa2e1fe0d415b9ae21f49b31f3dc1387005",
+      "target": "copilot",
+      "kind": "script"
+    },
+    {
+      "path": ".github/skills/project-foundations/SKILL.md",
+      "sha256": "e95cee8db204826fe2cd2efa35dfbfa74401ae6d901e5657eb0a4f7bb5b945e9",
+      "target": "copilot",
+      "kind": "skill"
+    },
+    {
+      "path": ".github/skills/spec-drive-development/SKILL.md",
+      "sha256": "aa97137f1fffedf1c6cd1eb320bb4d94cc3d421dfa47a6c0de338002e144c18d",
+      "target": "copilot",
+      "kind": "skill"
+    },
+    {
+      "path": ".github/skills/spec-drive-development/references/templates.md",
+      "sha256": "3619ac3795e559cfa86488b0a218830d6970b01b8038fdad88f47c22d3c6ed22",
+      "target": "copilot",
+      "kind": "skill"
+    },
+    {
+      "path": ".mcp.json",
+      "sha256": "803d2a668d3a851fef5052fb597ad3df7a799825204f781477e46b5800439ca1",
+      "target": "claude",
+      "kind": "mcp"
+    },
+    {
+      "path": ".opencode/agents/code-reviewer.md",
+      "sha256": "8818e07b7fdf11bd5b4e186d6732fa5952df2517778ca1a320d3b88f15ac7d2e",
+      "target": "opencode",
+      "kind": "agent"
+    },
+    {
+      "path": ".opencode/agents/git-branch-inspector.md",
+      "sha256": "1d265b6410c55cb4d34012f4ee72bb5359e84636f96caf84bb13b4925dc4faba",
+      "target": "opencode",
+      "kind": "agent"
+    },
+    {
+      "path": ".opencode/agents/graph-init.md",
+      "sha256": "2c8ba541aef7548236ad2ac72f4472b6b64dec9e89245d1dfdbca4dbce1c1bc9",
+      "target": "opencode",
+      "kind": "agent"
+    },
+    {
+      "path": ".opencode/agents/test-writer.md",
+      "sha256": "baf03a55b1b221c01770fce71a0480391194657266f8a6ccd90fe312fc5997b2",
+      "target": "opencode",
+      "kind": "agent"
+    },
+    {
+      "path": ".opencode/scripts/git-branch-report.sh",
+      "sha256": "ce7053a8cbe47a45b6dcbb5238655140c97b3a9edfc6cbea4b854de0b4bbab31",
+      "target": "opencode",
+      "kind": "script"
+    },
+    {
+      "path": ".opencode/scripts/graph-init.sh",
+      "sha256": "0300f0bb95acc3d06f2b6ffb229bafa2e1fe0d415b9ae21f49b31f3dc1387005",
+      "target": "opencode",
+      "kind": "script"
+    },
+    {
+      "path": ".opencode/skills/project-foundations/SKILL.md",
+      "sha256": "e95cee8db204826fe2cd2efa35dfbfa74401ae6d901e5657eb0a4f7bb5b945e9",
+      "target": "opencode",
+      "kind": "skill"
+    },
+    {
+      "path": ".opencode/skills/spec-drive-development/SKILL.md",
+      "sha256": "aa97137f1fffedf1c6cd1eb320bb4d94cc3d421dfa47a6c0de338002e144c18d",
+      "target": "opencode",
+      "kind": "skill"
+    },
+    {
+      "path": ".opencode/skills/spec-drive-development/references/templates.md",
+      "sha256": "3619ac3795e559cfa86488b0a218830d6970b01b8038fdad88f47c22d3c6ed22",
+      "target": "opencode",
+      "kind": "skill"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "8055f9785f456623e933993fbb82b914b2766f26386ad9074ada57644fce874e",
+      "target": "opencode",
+      "kind": "instructions"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "8055f9785f456623e933993fbb82b914b2766f26386ad9074ada57644fce874e",
+      "target": "claude",
+      "kind": "instructions"
+    }
+  ],
+  "source": "C:\\Users\\Luis Puc\\Documents\\LPS Projects\\agentic-coding-stuff",
+  "ref": null,
+  "path": ".agents"
+}
