@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\Luis Puc\\agent-memory\\server.py",
+        "--root",
+        "C:\\Users\\Luis Puc\\agent-memory",
+        "--project",
+        "testing-2761ce27"
+      ]
+    },
+    "codegraph": {
+      "command": "codegraph",
+      "args": [
+        "serve",
+        "--mcp",
+        "--path",
+        "C:\\Users\\Luis Puc\\Documents\\LPS Projects\\testing\\testing"
+      ]
+    }
+  }
+}

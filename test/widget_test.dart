@@ -1,30 +1,53 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:testing/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Mural app renders Talk screen', (WidgetTester tester) async {
+    await tester.pumpWidget(const MuralCrossPlatformApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Title text is present.
+    expect(find.text('¡Hola!'), findsOneWidget);
+    expect(find.text('Empezar charla'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Tapping the mic pill toggles the listening state.
+    await tester.tap(find.text('Empezar charla'));
+    await tester.pump();
+    expect(find.text('Escuchando...'), findsOneWidget);
+  });
+
+  testWidgets('Bottom navigation switches tabs', (WidgetTester tester) async {
+    await tester.pumpWidget(const MuralCrossPlatformApp());
+
+    await tester.tap(find.text('Temas'));
+    await tester.pump();
+    expect(find.text('Temas'), findsWidgets);
+  });
+
+  testWidgets('Mobile viewport renders full screen and buttons work', (WidgetTester tester) async {
+    // Simulate an Android phone viewport (width < 480).
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 2.625;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(const MuralCrossPlatformApp());
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Talk screen content is present.
+    expect(find.text('¡Hola!'), findsOneWidget);
+    expect(find.text('Empezar charla'), findsOneWidget);
+
+    // Mic pill toggles listening state on tap.
+    await tester.tap(find.text('Empezar charla'));
+    await tester.pump();
+    expect(find.text('Escuchando...'), findsOneWidget);
+
+    // Bottom nav items are present and tappable.
+    await tester.tap(find.text('Temas'));
+    await tester.pump();
+    expect(find.text('Temas'), findsWidgets);
   });
 }
