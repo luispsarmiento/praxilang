@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:testing/main.dart';
+import 'package:praxilang/main.dart';
 
 void main() {
   testWidgets('Mural app renders Talk screen', (WidgetTester tester) async {

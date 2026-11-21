@@ -1,4 +1,4 @@
-package com.example.testing
+package com.example.praxilang
 
 import io.flutter.embedding.android.FlutterActivity
 

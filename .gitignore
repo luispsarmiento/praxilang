@@ -50,3 +50,37 @@ app.*.map.json
 # >>> agencos (.agents) >>>
 /.agents/
 # <<< agencos (.agents) <<<
+# >>> agents-sync (generated files) >>>
+/.agents/mcp_config.json
+/.claude/agents/code-reviewer.md
+/.claude/agents/git-branch-inspector.md
+/.claude/agents/graph-init.md
+/.claude/agents/test-writer.md
+/.claude/scripts/git-branch-report.sh
+/.claude/scripts/graph-init.sh
+/.claude/skills/project-foundations/SKILL.md
+/.claude/skills/spec-driven-development/SKILL.md
+/.claude/skills/spec-driven-development/references/templates.md
+/.github/agents/code-reviewer.agent.md
+/.github/agents/git-branch-inspector.agent.md
+/.github/agents/graph-init.agent.md
+/.github/agents/test-writer.agent.md
+/.github/copilot-instructions.md
+/.github/scripts/git-branch-report.sh
+/.github/scripts/graph-init.sh
+/.github/skills/project-foundations/SKILL.md
+/.github/skills/spec-driven-development/SKILL.md
+/.github/skills/spec-driven-development/references/templates.md
+/.mcp.json
+/.opencode/agents/code-reviewer.md
+/.opencode/agents/git-branch-inspector.md
+/.opencode/agents/graph-init.md
+/.opencode/agents/test-writer.md
+/.opencode/scripts/git-branch-report.sh
+/.opencode/scripts/graph-init.sh
+/.opencode/skills/project-foundations/SKILL.md
+/.opencode/skills/spec-driven-development/SKILL.md
+/.opencode/skills/spec-driven-development/references/templates.md
+/AGENTS.md
+/CLAUDE.md
+# <<< agents-sync (generated files) <<<

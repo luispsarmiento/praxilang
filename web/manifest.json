@@ -1,11 +1,11 @@
 {
-    "name": "testing",
-    "short_name": "testing",
+    "name": "PraxiLang",
+    "short_name": "PraxiLang",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Practice languages with generative AI",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

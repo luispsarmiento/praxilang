@@ -1,6 +1,6 @@
-# testing
+# PraxiLang
 
-A new Flutter project.
+Practice languages with generative AI.
 
 ## Getting Started
 
