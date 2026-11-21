@@ -28,24 +28,36 @@ class MuralCrossPlatformApp extends StatelessWidget {
   }
 }
 
-/// Constrains layout on Flutter Web / Tablet while expanding normally on Android mobile
+/// Constrains layout on Flutter Web / Tablet (width > 480) while expanding
+/// normally (full screen, no outer scaffold/backdrop) on Android mobile.
 class ResponsiveShell extends StatelessWidget {
   final Widget child;
   const ResponsiveShell({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFECE7DF), // Subtle backdrop for desktop web gutters
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 480),
-          child: Container(
-            color: const Color(0xFFF9F6F0),
-            child: child,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // On narrow screens (phones / Android mobile) render the child directly
+        // so it becomes the root scaffold and fills the screen. Wrapping it in
+        // an outer Scaffold + centered 480px column breaks layout and button
+        // hit-testing on mobile.
+        if (constraints.maxWidth <= 480) {
+          return child;
+        }
+        return Scaffold(
+          backgroundColor: const Color(0xFFECE7DF), // Subtle backdrop for desktop web gutters
+          body: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 480),
+              child: Container(
+                color: const Color(0xFFF9F6F0),
+                child: child,
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
@@ -79,7 +91,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         decoration: BoxDecoration(
           color: const Color(0xFFF9F6F0),
           border: Border(
-            top: BorderSide(color: Colors.black.withOpacity(0.06), width: 1),
+            top: BorderSide(color: Colors.black.withValues(alpha:0.06), width: 1),
           ),
         ),
         child: SafeArea(
@@ -110,7 +122,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         child: InkWell(
           onTap: () => setState(() => _currentIndex = index),
           splashColor: Colors.transparent,
-          highlightColor: Colors.black.withOpacity(0.04),
+          highlightColor: Colors.black.withValues(alpha:0.04),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -174,7 +186,7 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(24),
                   elevation: 1,
-                  shadowColor: Colors.black.withOpacity(0.12),
+                  shadowColor: Colors.black.withValues(alpha:0.12),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(24),
                     mouseCursor: SystemMouseCursors.click,
@@ -235,12 +247,12 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFFF9E79).withOpacity(0.35 + (_pulseController.value * 0.15)),
+                              color: const Color(0xFFFF9E79).withValues(alpha:0.35 + (_pulseController.value * 0.15)),
                               blurRadius: 55,
                               spreadRadius: 8 + (_pulseController.value * 14),
                             ),
                             BoxShadow(
-                              color: const Color(0xFFFFD480).withOpacity(0.35),
+                              color: const Color(0xFFFFD480).withValues(alpha:0.35),
                               blurRadius: 35,
                               spreadRadius: 2,
                             ),
@@ -264,7 +276,7 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
                               center: const Alignment(-0.25, -0.25),
                               radius: 0.9,
                               colors: [
-                                Colors.white.withOpacity(0.38),
+                                Colors.white.withValues(alpha:0.38),
                                 Colors.transparent,
                               ],
                             ),
@@ -299,7 +311,7 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
                   fontSize: 16,
                   height: 1.35,
                   fontWeight: FontWeight.w400,
-                  color: const Color(0xFF1D1D1F).withOpacity(0.65),
+                  color: const Color(0xFF1D1D1F).withValues(alpha:0.65),
                 ),
               ),
             ),
@@ -325,7 +337,7 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
                     color: const Color(0xFF1C1C1E),
                     borderRadius: BorderRadius.circular(32),
                     elevation: 3,
-                    shadowColor: Colors.black.withOpacity(0.2),
+                    shadowColor: Colors.black.withValues(alpha:0.2),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(32),
                       mouseCursor: SystemMouseCursors.click,
@@ -380,7 +392,7 @@ class _TalkScreenState extends State<TalkScreen> with SingleTickerProviderStateM
       color: Colors.white,
       shape: const CircleBorder(),
       elevation: 2,
-      shadowColor: Colors.black.withOpacity(0.08),
+      shadowColor: Colors.black.withValues(alpha:0.08),
       child: Tooltip(
         message: tooltip,
         child: InkWell(

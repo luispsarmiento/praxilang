@@ -9,6 +9,15 @@
         "--project",
         "testing-2761ce27"
       ]
+    },
+    "codegraph": {
+      "command": "codegraph",
+      "args": [
+        "serve",
+        "--mcp",
+        "--path",
+        "C:\\Users\\Luis Puc\\Documents\\LPS Projects\\testing\\testing"
+      ]
     }
   }
 }
